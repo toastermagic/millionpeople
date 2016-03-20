@@ -15,7 +15,7 @@ module.exports = function(app) {
   var env = app.get('env');
 
   var jadeViewPath = path.normalize(__dirname + '/../views'); 
-  console.log('using Jade for views at path', jadeViewPath)
+  console.log('Using Jade for views at path', jadeViewPath)
   app.set('views', jadeViewPath);
   app.set('view engine', 'jade');
 

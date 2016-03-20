@@ -49,19 +49,11 @@
                 person: null };
                
             $scope.showPerson = function (ev, p) {
-                function PersonDialogController(scope, $mdDialog, person) {
-                    scope.person = person;
-
-                    scope.cancel = function () {
-                            $mdDialog.cancel();
-                    };
-                }
-
                 peopleService
                     .getPerson(p.PersonId)
                     .success(function(p) {
                         $mdDialog.show({
-                            controller: PersonDialogController,
+                            controller: ['$scope', '$mdDialog', 'person', PersonDialogController],
                             templateUrl: '/views/person',
                             targetEvent: ev,
                             locals: { person: p }
@@ -112,6 +104,13 @@
                 }
             }
 
+            function PersonDialogController(scope, $mdDialog, person) {
+                scope.person = person;
+
+                scope.cancel = function () {
+                        $mdDialog.cancel();
+                };
+            }
         }
     ]);
 })();

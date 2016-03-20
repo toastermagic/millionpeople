@@ -2,7 +2,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Launch",
+			"name": "Dev",
 			"type": "node",
 			"request": "launch",
 			"program": "${workspaceRoot}\\server\\server.js",
@@ -16,6 +16,27 @@
 			],
 			"env": {
 				"NODE_ENV": "development"
+			},
+			"externalConsole": false,
+			"sourceMaps": false,
+			"outDir": null
+		},
+		{
+			"name": "Prod",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceRoot}\\dist\\server\\server.js",
+			"stopOnEntry": false,
+			"args": [],
+			"cwd": "${workspaceRoot}",
+			"preLaunchTask": null,
+			"runtimeExecutable": null,
+			"runtimeArgs": [
+				"--nolazy"
+			],
+			"env": {
+				"NODE_ENV": "production",
+                "PORT": "8123"
 			},
 			"externalConsole": false,
 			"sourceMaps": false,
