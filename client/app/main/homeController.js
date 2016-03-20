@@ -60,8 +60,6 @@
                 peopleService
                     .getPerson(p.PersonId)
                     .success(function(p) {
-                        //$scope.vm.person = p;
-                        
                         $mdDialog.show({
                             controller: PersonDialogController,
                             templateUrl: '/views/person',
