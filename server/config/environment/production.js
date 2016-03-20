@@ -4,6 +4,12 @@
 // ==================================
 module.exports = {
     datastore: {
+        type: "memoryStore",
+        config: {
+            path: "./data/output_1M.txt"
+        }
+    },
+    sql_datastore: {
         type: "sqlAzure",
         config: {
             sqlServer: {
