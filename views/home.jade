@@ -1,0 +1,26 @@
+md-toolbar
+    .md-toolbar-tools
+        md-button.md-icon-button(aria-label="Settings")
+            md-icon menu
+        h2 Search for People
+        span(flex)
+        md-button.md-fab.md-mini(ng-disabled="false" ng-click="showAlert($event)")
+            md-tooltip(md-direction="bottom") cake
+            md-icon cake
+
+md-content(layout-padding)
+    md-input-container.md-block(flex-gt-sm)
+        label Search Term
+        input(ng-model="vm.searchTerm" ng-model-options="{debounce: 500}" autofocus ng-readonly="vm.searching")
+        .hint You can search using surname or address
+
+md-content(layout-padding)
+    md-grid-list(md-cols-gt-md="12" md-cols="3" md-cols-md="8" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="16px" md-gutter-md="8px" md-gutter="4px")
+        md-grid-tile(ng-repeat="person in vm.people"
+                      id="person{{ person.id}}" 
+                      ng-style="{ 'background': person.color }"
+                      class="animatedTile"
+                      ng-click="showPerson($event, person)"
+                      md-colspan-gt-sm="{{ person.col }}"
+                      md-rowspan-gt-sm="{{ person.row }}")
+            person-tile(person="person" vm="vm")

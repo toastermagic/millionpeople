@@ -1,0 +1,4 @@
+div(layout="column" layout-align="center center" layout-fill
+    ng-style="{'background': person.color, cursor : 'pointer' }")
+    div(ng-bind-html="person.FirstName + ' ' + person.LastName | highlight: vm.searchTerm")
+    div(ng-bind-html="person.StreetAddress | highlight: vm.searchTerm")

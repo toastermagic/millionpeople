@@ -1,0 +1,34 @@
+{
+  "name": "azure",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "toastermagic <toastermagic@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "appPath": "client",
+  "dependencies": {
+    "angular-material": "^1.0.6",
+    "es5-shim": "^4.5.7",
+    "json3": "^3.3.2",
+    "angular-resource": "^1.5.1",
+    "angular-cookies": "^1.5.1",
+    "angular-messages": "^1.5.1",
+    "angular-sanitize": "^1.5.1",
+    "angular-route": "^1.5.1",
+    "angular-animate": "^1.5.1",
+    "angular-aria": "^1.5.1",
+    "lodash": "^4.6.1",
+    "angular-socket-io": "^0.7.0",
+    "animate.css": "^3.5.1"
+  }
+}
