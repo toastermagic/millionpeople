@@ -23,7 +23,7 @@ var MemoryStoreFactory = function(config) {
                         return;
                     }
                     data.SearchKey = (data.FirstName + ' ' + data.LastName + ' ' + data.StreetAddress).toLowerCase();
-                    data.PersonId = people.length + 1;
+                    data.PersonId = people.length;
                     people.push(data);
 
                     if (people.length % 10000 === 0) {
