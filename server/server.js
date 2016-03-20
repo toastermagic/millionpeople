@@ -8,19 +8,21 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var express = require('express');
-var config = require('./server/config/environment');
+var config = require('./config/environment');
 // Setup server
 var app = express();
+console.info('Node starts in %s mode', app.get('env'));
+
 var server = require('http').createServer(app);
-require('./server/config/express')(app);
-require('./server/routes')(app, server);
+require('./config/express')(app);
+require('./routes')(app, server);
 
 // Start server
 server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
-var sf = require('./server/components/sockets')(server);
+var sf = require('./components/sockets')(server);
 
 // io.sockets.on('connection', function (socket) {
 //     console.log('socket connection', socket);
