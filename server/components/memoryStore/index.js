@@ -4,6 +4,14 @@ var _ = require('lodash');
 var csv = require('csv-parser');
 var fs = require('fs');
 
+function rowMatch(terms, row) {
+    var isMatch = true;
+    for (var index = 0; index < terms.length; index++) {
+        isMatch = isMatch && row.indexOf(terms[index]) > -1;
+    }
+    return isMatch;
+}
+
 var MemoryStoreFactory = function(config) {
     var _ready = false;
     var people = [];
@@ -48,8 +56,10 @@ var MemoryStoreFactory = function(config) {
 
             var rowCount = 0;
             searchTerm = searchTerm.toLowerCase();
+            var terms = searchTerm.split(' ');
+            
             for (var index = 0; index < people.length && rowCount < 50; index++) {
-                if (searchTerm === "" || people[index].SearchKey.indexOf(searchTerm) > -1) {
+                if (searchTerm === "" || rowMatch(terms, people[index].SearchKey)) {
                     rowCount++;
                     if (rowCallback !== null) {
                         rowCallback(people[index]);
