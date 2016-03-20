@@ -33,7 +33,7 @@ module.exports = function(app) {
   }
 
   if ('staging' === env) {
-    app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
+    app.use(favicon(path.join(config.root, 'client', 'favicon.ico')));
     app.use('/bower_components', express.static(path.join(config.root, 'bower_components')));
     app.use(express.static(path.join(config.root, 'client')));
     app.set('appPath', path.join(config.root, 'client'));
