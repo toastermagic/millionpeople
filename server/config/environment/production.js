@@ -6,7 +6,7 @@ module.exports = {
     datastore: {
         type: "memoryStore",
         config: {
-            path: "./data/output_1M.txt"
+            path: "../data/output_1M.txt"
         }
     },
     sql_datastore: {
@@ -24,6 +24,5 @@ module.exports = {
             }
         }
     },
-    port: process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 80,
-    root: "/dist/public"
+    port: process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 80
 };

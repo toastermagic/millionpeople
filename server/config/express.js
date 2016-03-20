@@ -14,7 +14,7 @@ var config = require('./environment');
 module.exports = function(app) {
   var env = app.get('env');
 
-  var jadeViewPath = path.normalize(__dirname + '/../../views'); 
+  var jadeViewPath = path.normalize(__dirname + '/../views'); 
   console.log('using Jade for views at path', jadeViewPath)
   app.set('views', jadeViewPath);
   app.set('view engine', 'jade');
@@ -27,8 +27,8 @@ module.exports = function(app) {
 
   if ('production' === env) {
     //app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
-    app.use(express.static(path.join(config.root, 'dist', 'public')));
-    app.set('appPath', path.join(config.root, 'dist', 'public'));
+    app.use(express.static(path.join(config.root, 'public')));
+    app.set('appPath', path.join(config.root, 'public'));
     app.use(morgan('dev'));
   }
 
