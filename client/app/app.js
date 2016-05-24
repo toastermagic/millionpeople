@@ -66,5 +66,5 @@ angular.module('peopleApp', [
     };
 })
 .factory('socket', function(socketFactory) {
-    return socketFactory();
+    return socketFactory({ port:6000 });
 });

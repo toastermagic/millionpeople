@@ -1,0 +1,46 @@
+{
+  "buildOptions": {
+    "preserveCompilationContext": true,
+    "emitEntryPoint": true,
+    "debugType": "portable",
+    "compile": "server",
+    "copyToOutput": "appsettings.json"
+  },
+  "dependencies": {
+    "Microsoft.AspNetCore.Authentication": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.Authentication.JwtBearer": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.Mvc": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.Hosting": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc3-*",
+    "Microsoft.AspNetCore.SignalR.Server": "0.1.0-*",
+    "Microsoft.AspNetCore.WebSockets.Server": "0.1.0-*",
+    "Microsoft.Extensions.Configuration": "1.0.0-rc3-*",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0-rc3-*",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-rc3-*",
+    "Microsoft.Extensions.Options": "1.0.0-rc3-*",
+    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc3-*",
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc3-*",
+    "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0-rc3-*",
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0-rc2-*"
+    }
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dnxcore50",
+        "portable-net45+win8+wp8"
+      ]
+    }
+  },
+  "scripts": {
+    "postpublish": "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
+  },
+  "commands": {
+    "web": "Microsoft.AspNetCore.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
+  }
+}

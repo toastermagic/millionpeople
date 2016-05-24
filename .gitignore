@@ -5,3 +5,6 @@ bower_components
 dist
 .tmp
 data
+wwwroot
+bin
+obj
